@@ -1,0 +1,20 @@
+{
+  "name": "@toy/store",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "tasks": {
+    "dev": "deno test --watch mod.ts",
+    "prebuild": "rm -rf ./docs/dist",
+    "build": "deno task prebuild && deno run --allow-net --allow-env --allow-read --allow-run ./bundle.ts"
+  },
+  "license": "MIT",
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  },
+  "compilerOptions": {
+    "lib": [
+      "deno.window",
+      "DOM"
+    ]
+  }
+}
